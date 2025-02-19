@@ -96,6 +96,126 @@ modules:
     warning_count: 0
     status: Success
     iteration: 1
+  - name: oee
+    location:
+      path: modules/bootcamp/use_cases/oee
+      hash: ebe33297
+    build_variables:
+    - key: CDF_PROJECT
+      value: cdf-bootcamp-63-test
+      is_selected: true
+      location: modules/bootcamp
+    - key: IDP_CLIENT_ID
+      value: ${IDP_CLIENT_ID}
+      is_selected: true
+      location: modules/bootcamp
+    - key: IDP_CLIENT_SECRET
+      value: ${IDP_CLIENT_SECRET}
+      is_selected: true
+      location: modules/bootcamp
+    - key: IDP_TENANT_ID
+      value: ${IDP_TENANT_ID}
+      is_selected: true
+      location: modules/bootcamp
+    - key: CDF_URL
+      value: https://westeurope-1.cognitedata.com
+      is_selected: true
+      location: modules/bootcamp
+    - key: IDP_SCOPES
+      value: https://westeurope-1.cognitedata.com/.default
+      is_selected: true
+      location: modules/bootcamp
+    - key: IDP_TOKEN_URL
+      value: ${IDP_TOKEN_URL}
+      is_selected: true
+      location: modules/bootcamp
+    - key: data_developer_source_id
+      value: 899f5549-bf63-4af1-8e86-9f67f055a316
+      is_selected: true
+      location: modules/bootcamp
+    - key: data_pipeline_oee_source_id
+      value: 692439cc-651a-4e54-b947-f00d259fb8d6
+      is_selected: true
+      location: modules/bootcamp
+    - key: readwrite_source_id
+      value: 3062e435-9c28-464d-9ca5-fa5bf3f88513
+      is_selected: true
+      location: modules/bootcamp
+    - key: icapi_extractors_source_id
+      value: bddcbbfd-4d4f-4592-b21a-6cfb25efed05
+      is_selected: true
+      location: modules/bootcamp
+    - key: data_pipeline_oee_client_id
+      value: ${DATA_PIPELINE_OEE_CLIENT_ID}
+      is_selected: true
+      location: modules/bootcamp
+    - key: data_pipeline_oee_client_secret
+      value: ${DATA_PIPELINE_OEE_CLIENT_SECRET}
+      is_selected: true
+      location: modules/bootcamp
+    - key: icapi_extractors_client_id
+      value: ${ICAPI_EXTRACTORS_CLIENT_ID}
+      is_selected: true
+      location: modules/bootcamp
+    - key: icapi_extractors_client_secret
+      value: ${ICAPI_EXTRACTORS_CLIENT_SECRET}
+      is_selected: true
+      location: modules/bootcamp
+    - key: icapi_ds_external_id
+      value: ds_icapi
+      is_selected: true
+      location: modules/bootcamp
+    - key: icapi_space_name
+      value: icapi_dm_space
+      is_selected: true
+      location: modules/bootcamp
+    - key: oee_space_name
+      value: oee_ts_space
+      is_selected: true
+      location: modules/bootcamp
+    - key: uc_oee_ds_external_id
+      value: ds_uc_oee
+      is_selected: true
+      location: modules/bootcamp/use_cases/oee
+    resources:
+      data_models:
+      - identifier:
+          space: oee_ts_space
+        source:
+          path: /Users/hikarumaruyama/src/localonly/workspace/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_models/oee_timeseries.space.yaml
+          hash: 4424ed7c
+        kind: Space
+      auth:
+      - identifier:
+          name: data_pipeline_oee
+        source:
+          path: /Users/hikarumaruyama/src/localonly/workspace/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/auth/data_pipeline_oee.yaml
+          hash: 0f7a2afb
+        kind: Group
+      functions:
+      - identifier:
+          externalId: oee_timeseries
+        source:
+          path: /Users/hikarumaruyama/src/localonly/workspace/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/functions/functions.Functions.yaml
+          hash: b4795e39
+        kind: Function
+      - identifier:
+          functionExternalId: oee_timeseries
+          name: Run calculations every 5 minutes for last hour of data
+        source:
+          path: /Users/hikarumaruyama/src/localonly/workspace/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/functions/schedules.Schedules.yaml
+          hash: 0cc26f4c
+        kind: Schedule
+      data_sets:
+      - identifier:
+          externalId: ds_uc_oee
+        source:
+          path: /Users/hikarumaruyama/src/localonly/workspace/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_sets/data_sets.yaml
+          hash: 19ed1d20
+        kind: DataSet
+    warning_count: 0
+    status: Success
+    iteration: 1
   - name: ice_cream_api
     location:
       path: modules/bootcamp/ice_cream_api
@@ -318,112 +438,5 @@ modules:
           hash: de947829
         kind: Database
     warning_count: 14
-    status: Success
-    iteration: 1
-  - name: oee
-    location:
-      path: modules/bootcamp/use_cases/oee
-      hash: ce36f1e9
-    build_variables:
-    - key: CDF_PROJECT
-      value: cdf-bootcamp-63-test
-      is_selected: true
-      location: modules/bootcamp
-    - key: IDP_CLIENT_ID
-      value: ${IDP_CLIENT_ID}
-      is_selected: true
-      location: modules/bootcamp
-    - key: IDP_CLIENT_SECRET
-      value: ${IDP_CLIENT_SECRET}
-      is_selected: true
-      location: modules/bootcamp
-    - key: IDP_TENANT_ID
-      value: ${IDP_TENANT_ID}
-      is_selected: true
-      location: modules/bootcamp
-    - key: CDF_URL
-      value: https://westeurope-1.cognitedata.com
-      is_selected: true
-      location: modules/bootcamp
-    - key: IDP_SCOPES
-      value: https://westeurope-1.cognitedata.com/.default
-      is_selected: true
-      location: modules/bootcamp
-    - key: IDP_TOKEN_URL
-      value: ${IDP_TOKEN_URL}
-      is_selected: true
-      location: modules/bootcamp
-    - key: data_developer_source_id
-      value: 899f5549-bf63-4af1-8e86-9f67f055a316
-      is_selected: true
-      location: modules/bootcamp
-    - key: data_pipeline_oee_source_id
-      value: 692439cc-651a-4e54-b947-f00d259fb8d6
-      is_selected: true
-      location: modules/bootcamp
-    - key: readwrite_source_id
-      value: 3062e435-9c28-464d-9ca5-fa5bf3f88513
-      is_selected: true
-      location: modules/bootcamp
-    - key: icapi_extractors_source_id
-      value: bddcbbfd-4d4f-4592-b21a-6cfb25efed05
-      is_selected: true
-      location: modules/bootcamp
-    - key: data_pipeline_oee_client_id
-      value: ${DATA_PIPELINE_OEE_CLIENT_ID}
-      is_selected: true
-      location: modules/bootcamp
-    - key: data_pipeline_oee_client_secret
-      value: ${DATA_PIPELINE_OEE_CLIENT_SECRET}
-      is_selected: true
-      location: modules/bootcamp
-    - key: icapi_extractors_client_id
-      value: ${ICAPI_EXTRACTORS_CLIENT_ID}
-      is_selected: true
-      location: modules/bootcamp
-    - key: icapi_extractors_client_secret
-      value: ${ICAPI_EXTRACTORS_CLIENT_SECRET}
-      is_selected: true
-      location: modules/bootcamp
-    - key: icapi_ds_external_id
-      value: ds_icapi
-      is_selected: true
-      location: modules/bootcamp
-    - key: icapi_space_name
-      value: icapi_dm_space
-      is_selected: true
-      location: modules/bootcamp
-    - key: oee_space_name
-      value: oee_ts_space
-      is_selected: true
-      location: modules/bootcamp
-    - key: uc_oee_ds_external_id
-      value: ds_uc_oee
-      is_selected: true
-      location: modules/bootcamp/use_cases/oee
-    resources:
-      data_models:
-      - identifier:
-          space: oee_ts_space
-        source:
-          path: /Users/hikarumaruyama/src/localonly/workspace/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_models/oee_timeseries.space.yaml
-          hash: 4424ed7c
-        kind: Space
-      auth:
-      - identifier:
-          name: data_pipeline_oee
-        source:
-          path: /Users/hikarumaruyama/src/localonly/workspace/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/auth/data_pipeline_oee.yaml
-          hash: 0f7a2afb
-        kind: Group
-      functions: []
-      data_sets:
-      - identifier:
-          externalId: ds_uc_oee
-        source:
-          path: /Users/hikarumaruyama/src/localonly/workspace/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_sets/data_sets.yaml
-          hash: 19ed1d20
-        kind: DataSet
-    warning_count: 0
     status: Success
     iteration: 1
